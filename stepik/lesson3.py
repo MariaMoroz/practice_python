@@ -133,19 +133,19 @@
 #     ouf.write(result)
 
 # ****
-s1=''
-with open('dataset_3363_3.txt') as inf:
-    for line in inf:
-        line = line.strip()
-        s1 += line
-print(s1)
-arr =[]
-arr = s1.lower().split(' ')
-print(arr)
-d={}
-for i in arr:
-    d[i] = arr.count(i)
-print(d.values())
+# s1=''
+# with open('dataset_3363_3.txt') as inf:
+#     for line in inf:
+#         line = line.strip()
+#         s1 += line
+# print(s1)
+# arr =[]
+# arr = s1.lower().split(' ')
+# print(arr)
+# d={}
+# for i in arr:
+#     d[i] = arr.count(i)
+# print(d.values())
 
 
 
