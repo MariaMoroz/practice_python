@@ -146,6 +146,42 @@
 # for i in arr:
 #     d[i] = arr.count(i)
 # print(d.values())
+# ***
+# Имеется файл с данными по успеваемости абитуриентов.
+# Он представляет из себя набор строк, где в каждой строке записана следующая информация:
+# Фамилия;Оценка_по_математике;Оценка_по_физике;Оценка_по_русскому_языку
+# Поля внутри строки разделены точкой с запятой, оценки — целые числа.
+# Напишите программу, которая считывает исходный файл с подобной структурой и для каждого абитуриента записывает его среднюю оценку по трём предметам на отдельной строке, соответствующей этому абитуриенту, в файл с ответом.
+# Также вычислите средние баллы по математике, физике и русскому языку по всем абитуриентам и добавьте полученные значения, разделённые пробелом, последней строкой в файл с ответом.
+# В качестве ответа на задание прикрепите полученный файл со средними оценками по каждому ученику и одной строкой со средними оценками по трём предметам.
+# Примечание. Для разбиения строки на части по символу ';' можно использовать метод split следующим образом:
+#
+# print('First;Second-1 Second-2;Third'.split(';'))
+# # ['First', 'Second-1 Second-2', 'Third']
+arr=[]
+list=[]
+s =''
+middle_ab = ''
+middle_math = 0
+middle_scince = 0
+middle_lan_arts = 0
+with open('dataset_3363_4.txt') as inf:
+    for line in inf:
+        s=line.strip()
+        arr = s.split(';')
+        middle_ab += str((int(arr[1]) + int(arr[2]) + int(arr[3]))/3) + '\n'
+        with open('result.txt', 'w') as ouf:
+            ouf.write(middle_ab)
+        list.append(arr)
+print(list)
+for i in range(len(list)):
+    middle_math += int(list[i][1])/len(list)
+    middle_scince += int(list[i][2]) / len(list)
+    middle_lan_arts += int(list[i][3]) / len(list)
+total = ''
+total += str(middle_math)+ " " + str(middle_scince)+ " "  + str(middle_lan_arts)
+with open('result.txt', 'a') as ouf:
+    ouf.write(total)
 
 
 
