@@ -158,33 +158,115 @@
 #
 # print('First;Second-1 Second-2;Third'.split(';'))
 # # ['First', 'Second-1 Second-2', 'Third']
-arr=[]
-list=[]
-s =''
-middle_ab = ''
-middle_math = 0
-middle_scince = 0
-middle_lan_arts = 0
-with open('dataset_3363_4.txt') as inf:
-    for line in inf:
-        s=line.strip()
-        arr = s.split(';')
-        middle_ab += str((int(arr[1]) + int(arr[2]) + int(arr[3]))/3) + '\n'
-        with open('result.txt', 'w') as ouf:
-            ouf.write(middle_ab)
-        list.append(arr)
-print(list)
-for i in range(len(list)):
-    middle_math += int(list[i][1])/len(list)
-    middle_scince += int(list[i][2]) / len(list)
-    middle_lan_arts += int(list[i][3]) / len(list)
-total = ''
-total += str(middle_math)+ " " + str(middle_scince)+ " "  + str(middle_lan_arts)
-with open('result.txt', 'a') as ouf:
-    ouf.write(total)
+# arr=[]
+# list=[]
+# s =''
+# middle_ab = ''
+# middle_math = 0
+# middle_scince = 0
+# middle_lan_arts = 0
+# with open('dataset_3363_4.txt') as inf:
+#     for line in inf:
+#         s=line.strip()
+#         arr = s.split(';')
+#         middle_ab += str((int(arr[1]) + int(arr[2]) + int(arr[3]))/3) + '\n'
+#         with open('result.txt', 'w') as ouf:
+#             ouf.write(middle_ab)
+#         list.append(arr)
+# print(list)
+# for i in range(len(list)):
+#     middle_math += int(list[i][1])/len(list)
+#     middle_scince += int(list[i][2]) / len(list)
+#     middle_lan_arts += int(list[i][3]) / len(list)
+# total = ''
+# total += str(middle_math)+ " " + str(middle_scince)+ " "  + str(middle_lan_arts)
+# with open('result.txt', 'a') as ouf:
+#     ouf.write(total)
+
+# ***
+# Напишите программу, которая подключает модуль math и, используя значение числа π из этого модуля,
+# находит для переданного ей на стандартный ввод радиуса круга периметр этого круга и выводит его на стандартный вывод.
+# import math
+# r = float(input())
+# print(2 * math.pi * r)
+
+# ***
+# Напишите программу, которая запускается из консоли и печатает значения всех переданных аргументов на экран
+# (имя скрипта выводить не нужно). Не изменяйте порядок аргументов при выводе.
+# Для доступа к аргументам командной строки программы подключите модуль sys и используйте переменную argv из этого модуля.
+# Пример работы программы:
+# > python3 my_solution.py arg1 arg2
+# arg1 arg2
+
+# import sys
+#
+# print(*sys.argv[1:])
+# *******
+# установка библиотек
+import requests
+# r = requests.get("http://exemple.com")
+# print(r.text)
+
+# url = "http://exemple.com"
+# par = {'key1': 'value1', 'key2': 'value2'}
+# r = requests.get(url, params=par)
+# print(r.url)
+
+# url = 'http://httpbin.org/cookies'
+# cookies = {'cookies_are': 'working'}
+# r = requests.get(url, cookies=cookies)
+# print(r.text)
+# print(r.cookies['example_cookie_name'])
+
+# ***
+# Скачайте файл.
+# В нём указан адрес другого файла, который нужно скачать с использованием модуля requests и посчитать число строк в нём.
+#
+# Используйте функцию get для получения файла (имеет смысл вызвать метод strip к передаваемому параметру, чтобы убрать пробельные символы по краям).
+#
+# После получения файла вы можете проверить результат, обратившись к полю text.
+# Если результат работы скрипта не принимается, проверьте поле url на правильность.
+# Для подсчёта количества строк разбейте текст с помощью метода splitlines.
+# В поле ответа введите одно число или отправьте файл, содержащий одно число.
+
+# with open('dataset_3378_2.txt', 'r') as path:
+#     p = path.readline().strip()
+# r = requests.get(p)
+# t = r.text
+# s = t.splitlines()
+# print(len(s))
+# ***короткое решение
+# with open('dataset_3378_2.txt') as inf:
+#     r = requests.get(inf.readline().strip())
+#     print(len(r.text.splitlines()))
+
+# *****
+# Имеется набор файлов, каждый из которых, кроме последнего, содержит имя следующего файла.
+# Первое слово в тексте последнего файла: "We".
+# Скачайте предложенный файл. В нём содержится ссылка на первый файл из этого набора.
+# Все файлы располагаются в каталоге по адресу:
+# https://stepic.org/media/attachments/course67/3.6.3/
+# Загрузите содержимое последнего файла из набора, как ответ на это задание.
+
+# base_url = 'https://stepic.org/media/attachments/course67/3.6.3/'
+# with open('dataset_3378_3.txt','r') as inf:
+#     url = inf.readline().strip()
+# r = requests.get(url)
+#
+# while not r.text.startswith("We"):
+#     r = requests.get(base_url + r.text)
+#
+# print(r.text)
 
 
+# ***через рекурсию
+# import requests
+#
+def req(filename):
+    r = requests.get('https://stepic.org/media/attachments/course67/3.6.3/' + filename)
+    if r.text.split()[0] != 'We':
+        return req(r.text)
+    else:
+        return r.text
 
-
-
-
+print(req('699991.txt'))
