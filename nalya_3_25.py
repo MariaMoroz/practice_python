@@ -24,20 +24,23 @@
 #     print("Элементы уникальны")
 # else:
 #     print("Не уникальны")
-d = {
-    'key1': 'value1',
-    'key2': 'value2',
-    'key3': 'value3',
-    1: 34,
-    2: [9,14]
-}
-d['new key'] = 2
+# d = {
+#     'key1': 'value1',
+#     'key2': 'value2',
+#     'key3': 'value3',
+#     1: 34,
+#     2: [9,14]
+# }
+# d['new key'] = 2
+# print(d)
+# d[('new_tuple_key',)] = [4,3,'lll']
+# print(d)
+# print(d.get('key1'))
+# del d['key1']
+# print(d)
+# d.pop(('new_tuple_key',))
+# print(d)
+# print(d.keys())
+d = {'a':  1, 'b': 2}
+d['a']+=1
 print(d)
-d[('new_tuple_key',)] = [4,3,'lll']
-print(d)
-print(d.get('key1'))
-del d['key1']
-print(d)
-d.pop(('new_tuple_key',))
-print(d)
-print(d.keys())
