@@ -89,6 +89,7 @@
 #         x = int(c[i][j-1]) + int(c[i][j+1-m]) + int(c[i-1][j]) + int(c[i+1-n][j])
 #         print(x, end=' ')
 #     print()
+# **********
 # Выведите таблицу размером n×n, заполненную числами от 1 до n^2
 # по спирали, выходящей из левого верхнего угла и закрученной по часовой стрелке:
 # n = int(input())
@@ -139,17 +140,18 @@
 #   print(*t[i])
 
 # ***Решение через заполнение матрицы из середины.
-# n = int(input())**2
-# mx = [[]]
-# while n > 0:
-#     row_count = len(mx)
-#     for i in range(row_count):
-#         mx[i].insert(0, n)
-#         n -= 1
-#     mx = [[*x] for x in zip(*mx[::-1])]
-# for row in mx:
-#     print(*row)
-n = ['el1','el2', 2]
-for i in n:
-    if isinstance(i, int):
-        print('number is ', i)
+n = int(input())**2
+mx = [[]]
+while n > 0:
+    row_count = len(mx)
+    for i in range(row_count):
+        mx[i].insert(0, n)
+        n -= 1
+    mx = [[*x] for x in zip(*mx[::-1])]
+for row in mx:
+    print(*row)
+# *********
+# n = ['el1','el2', 2]
+# for i in n:
+#     if isinstance(i, int):
+#         print('number is ', i)

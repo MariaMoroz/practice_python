@@ -235,3 +235,51 @@
 # words = set(input().lower() for i in range(int(input())))
 # text = set(('\n'.join(input().lower() for i in range(int(input())))).split())
 # print('\n'.join(text - words))
+# *************
+#4
+# start = [0,0]
+# n = int(input())
+# for i in range(n):
+#     s = input().split(' ')
+#     if s[0] == 'север':
+#         start[1] += int(s[1])
+#     elif s[0] == 'восток':
+#         start[0] += int(s[1])
+#     elif s[0] == 'юг':
+#         start[1] -= int(s[1])
+#     elif s[0] == 'запад':
+#         start[0] -= int(s[1])
+# print(*start)
+# *****другое решение
+# n=int(input())
+# d={'север':0,'запад':0,'юг':0,'восток':0}
+# for i in range(n):
+#     x=input().split()
+#     d[x[0]]+=int(x[1])
+# print(d['восток']-d['запад'], d['север']-d['юг'])
+# ****************
+# 5
+
+d={}
+k=[]
+with open('dataset_3380_5.txt', 'r') as inf:
+    for line in inf:
+        s = line.strip().split()
+        if int(s[0]) not in d:
+            d[int(s[0])] = [s[1], int(s[2])]
+        else:
+            d[int(s[0])] +=[s[1], int(s[2])]
+    print(d)
+sum=0
+res={}
+count = 0
+for i in d:
+    for j in range(len(d[i])):
+        if isinstance(d[i][j], int):
+            count+=1
+            sum += d[i][j]
+    res[i] = sum/count
+    count = 0
+    sum=0
+for k in sorted(res.keys()):
+    print(k, ' ', res[k])
