@@ -24,7 +24,7 @@ for i in s:
 # 1) Write a program that uses a loop and prints numbers from 1 to 100 but the program should stop
 # if a number is equal to 45.
 for i in range(1, 101):
-    if i != 46:
+    if i != 45:
         print(i)
     else:
         break
@@ -54,7 +54,7 @@ print()
 # 10 j
 #
 s = 'abcdefghijklmnopqrstuvwxyz'
-i=1;
+i=1
 while i != 11:
     print(i, s[i-1])
     i+=1

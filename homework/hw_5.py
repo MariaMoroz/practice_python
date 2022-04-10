@@ -2,9 +2,9 @@
 #     1) Write a function to compare 2 numbers.
 # 	E.g. compare(2, 3) should return False otherwise should return True.
 
-# def compare_numbers(a,b):
-#     return a > b
-# print(compare_numbers(4,3))
+def compare_numbers(a,b):
+    return a > b
+print(compare_numbers(3,3))
 # ***************************************
 # def compare_input_numbers():
 #     a = int(input())

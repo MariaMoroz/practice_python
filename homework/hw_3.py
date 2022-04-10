@@ -9,23 +9,25 @@
 #     3) Modify the previous program to cover the case to compare only positive numbers, zero is not included!
 # 	in case one of the variables is zero return a string value as a print statement like:
 # 	"One or both numbers are not positive, can't proceed with the comparison!"
-a = 5
-b = 0
-# if a > b:
-#     print(True)
-# else:
-#     print(False)
+a = int(input())
+b = int(input())
+# print(a>b)
 # # 2
 # if a > b:
 #     print(f'{a} is greater than {b}')
+# elif a == b:
+#     print(f'{a} is equal {b}')
 # else:
-#     print(False)
-
-# 3
+#     print(f'{a} is less than {b}')
+#
+# # 3
 if a > 0 and b > 0:
     if a > b:
         print(f'{a} is greater than {b}')
-    print(False)
+    elif a == b:
+        print(f'{a} is equal {b}')
+    else:
+        print(f'{a} is less than {b}')
 else:
     print("One or both numbers are not positive, can't proceed with the comparison!")
 
