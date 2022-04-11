@@ -38,6 +38,13 @@
 #         arr.append(i)
 #     return arr
 # print(convert())
+
+# ******
+# def remove_dups(text):
+#     return list(set(text))
+# print(remove_dups('abcdadab'))
+
+
 #    4) Write a program/function that collects certain data as parameters and returns a dictionary object.
 # 	e.g. client("John", "Doe", "01/23/1934", "Male", "San Antonio", "TX", "78261") should return a dictionary object like:
 # 		{
@@ -49,10 +56,10 @@
 # 			"State": "TX",
 # 			"ZipCode": "78261"
 # 		}
-def client(data):
-    key = ['name', 'lastname', 'DOB', 'sex', 'city', 'state', 'Zipcode']
-    d = {}
-    for i in range(len(key)):
-        d[key[i]] = data[i]
-    return d
-print(client(["John", "Doe", "01/23/1934", "Male", "San Antonio", "TX", "78261"]))
+# def client(data):
+#     key = ['name', 'lastname', 'DOB', 'sex', 'city', 'state', 'Zipcode']
+#     d = {}
+#     for i in range(len(key)):
+#         d[key[i]] = data[i]
+#     return d
+# print(client(["John", "Doe", "01/23/1934", "Male", "San Antonio", "TX", "78261"]))

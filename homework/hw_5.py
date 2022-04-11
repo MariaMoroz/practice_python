@@ -4,7 +4,7 @@
 
 def compare_numbers(a,b):
     return a > b
-print(compare_numbers(3,3))
+# print(compare_numbers(3,3))
 # ***************************************
 # def compare_input_numbers():
 #     a = int(input())
@@ -16,14 +16,13 @@ print(compare_numbers(3,3))
 #     2) Modify the previous function to compare only positive numbers.
 # 	In case of negative numbers it will return a print statement like: "Can compare only positive numbers!".
 #
-# def compare_input_positive_numbers():
-#     a = int(input())
-#     b = int(input())
-#     if a < 0 or b < 0:
-#         return "Can compare only positive numbers!"
-#     else:
-#         return a > b
-# print(compare_input_positive_numbers())
+def compare_input_positive_numbers(a,b):
+
+    if a < 0 or b < 0:
+        return "Can compare only positive numbers!"
+    else:
+        return a > b
+print(compare_input_positive_numbers(5,5))
 
 #     3) Write a function to sum 2 numbers.
 # 	E.g. add(4, 5) should return 9 as a result.
