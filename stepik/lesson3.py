@@ -146,6 +146,27 @@
 # for i in arr:
 #     d[i] = arr.count(i)
 # print(d.values())
+# ----------------------------------------
+s1=''
+arr =[]
+with open('dataset_3363_33.txt', 'r') as inf:
+    for line in inf:
+        line = line.strip()
+        s1+=line
+arr = s1.lower().split(' ')
+print(arr)
+
+d={}
+for i in arr:
+    d[i] = arr.count(i)
+print(d)
+max = 0
+s =''
+for i in d:
+    if d.get(i) > max:
+        max = d.get(i)
+        s = i
+print(s, max)
 # ***
 # Имеется файл с данными по успеваемости абитуриентов.
 # Он представляет из себя набор строк, где в каждой строке записана следующая информация:
