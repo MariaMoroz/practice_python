@@ -6,23 +6,24 @@
 # 		"b"
 # 		"c"
 #
-# def print_list():
-#     arr = [i for i in input().split()]
+# def print_list(arr):
+#     # arr = [i for i in input().split()]
 #     for j in arr:
 #         print(j)
-# print_list()
+# print_list(["a", "b", "c"])
 
-#    2) Write a program/function that converts strings into tuples.
-# 	e.g. convert("abide") should return tuple like:
-# 		("a", "b", "i", "d", "e")
+   # 2) Write a program/function that converts strings into tuples.
+	# e.g. convert("abide") should return tuple like:
+	# 	("a", "b", "i", "d", "e")
+
+# def convert(s):
+#     # s = input()
 #
-# def convert():
-#     s = input()
 #     t = set()
 #     for i in s:
 #         t.add(i)
 #     return t
-# print(convert())
+# print(convert('abide'))
 
 
 #    3) Write a program/function that removes duplicates and returns only unique values as a list.
@@ -56,10 +57,10 @@
 # 			"State": "TX",
 # 			"ZipCode": "78261"
 # 		}
-# def client(data):
-#     key = ['name', 'lastname', 'DOB', 'sex', 'city', 'state', 'Zipcode']
-#     d = {}
-#     for i in range(len(key)):
-#         d[key[i]] = data[i]
-#     return d
-# print(client(["John", "Doe", "01/23/1934", "Male", "San Antonio", "TX", "78261"]))
+def client(data):
+    key = ['name', 'lastname', 'DOB', 'sex', 'city', 'state', 'Zipcode']
+    d = {}
+    for i in range(len(key)):
+        d[key[i]] = data[i]
+    return d
+print(client(["John", "Doe", "01/23/1934", "Male", "San Antonio", "TX", "78261"]))
