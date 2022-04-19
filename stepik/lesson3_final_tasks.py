@@ -259,27 +259,29 @@
 # print(d['восток']-d['запад'], d['север']-d['юг'])
 # ****************
 # 5
-
-d={}
-k=[]
-with open('dataset_3380_5.txt', 'r') as inf:
-    for line in inf:
-        s = line.strip().split()
-        if int(s[0]) not in d:
-            d[int(s[0])] = [s[1], int(s[2])]
-        else:
-            d[int(s[0])] +=[s[1], int(s[2])]
-    print(d)
-sum=0
-res={}
-count = 0
-for i in d:
-    for j in range(len(d[i])):
-        if isinstance(d[i][j], int):
-            count+=1
-            sum += d[i][j]
-    res[i] = sum/count
-    count = 0
-    sum=0
-for k in sorted(res.keys()):
-    print(k, ' ', res[k])
+#
+# d={}
+# k=[]
+# with open('dataset_3380_5.txt', 'r') as inf:
+#     for line in inf:
+#         s = line.strip().split()
+#         if int(s[0]) not in d:
+#             d[int(s[0])] = [s[1], int(s[2])]
+#         else:
+#             d[int(s[0])] +=[s[1], int(s[2])]
+#     print(d)
+# sum=0
+# res={}
+# count = 0
+# for i in d:
+#     for j in range(len(d[i])):
+#         if isinstance(d[i][j], int):
+#             count+=1
+#             sum += d[i][j]
+#     res[i] = sum/count
+#     count = 0
+#     sum=0
+# for k in sorted(res.keys()):
+#     print(k, ' ', res[k])
+import math
+print(str(math.ceil(math.pow(math.pi, math.e)*10000)))
